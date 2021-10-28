@@ -27,8 +27,8 @@ img {
   gap: 0.5rem;
   grid-auto-flow: dense;
   -ms-grid-rows: auto;
-  -ms-grid-columns: (minmax(clamp(7rem, 10vw, 15rem), 1fr))[auto-fit];
-      grid-template: auto/repeat(auto-fit, minmax(clamp(7rem, 10vw, 15rem), 1fr));
+  -ms-grid-columns: (minmax(clamp(7rem, 15vw, 15rem), 1fr))[auto-fill];
+      grid-template: auto/repeat(auto-fill, minmax(clamp(7rem, 15vw, 15rem), 1fr));
 }
 
 .image-grid-comp .image-grid-container .grid-item {

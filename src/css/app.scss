@@ -20,8 +20,8 @@ img {
     gap: 0.5rem;
     grid-auto-flow: dense;
     grid-template: auto/ repeat(
-        auto-fit,
-        minmax(clamp(7rem, 10vw, 15rem), 1fr)
+        auto-fill,
+        minmax(clamp(7rem, 15vw, 15rem), 1fr)
       );
 
     .grid-item {
