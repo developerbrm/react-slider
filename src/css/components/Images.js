@@ -7,7 +7,7 @@ const Images = ({ data }) => {
   return [...Array(count)].map((_, index) => (
     <div className={wrapperClass} id={uniqid()} key={uniqid()}>
       <img
-        className="apply-image-load-animation "
+        className="apply-image-load-animation"
         src={`https://loremflickr.com/${size + index}/${size + index}/car`}
         alt={`grid-img-${index}`}
         height="100px"

@@ -16,6 +16,14 @@ const ImageCarousel = () => {
       : setCounter((count) => count - 1);
   };
 
+  const handleImagesCountChange = (e) => {
+    const { value } = e.target;
+
+    if (Number(value) <= 0) return;
+
+    setImagesCount(() => Number(value));
+  };
+
   useEffect(() => {
     const allCarouselItems = [...carouselContainerRef.current.childNodes];
 
@@ -28,19 +36,19 @@ const ImageCarousel = () => {
         currentItem.classList.remove("display-in");
       }
     });
-  }, [counter, imagesCount]);
+  }, [counter]);
 
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, [imagesCount])
+  useEffect(() => {
+    setCounter(() => imagesCount - 1);
+  }, [imagesCount]);
 
   return (
     <div className="img-carousel-comp">
       <Container sx={{ padding: "1rem 0" }} maxWidth="lg">
-        <div ref={carouselContainerRef} className="img-carousel-container">
+        <div
+          ref={carouselContainerRef}
+          className="img-carousel-container apply-image-load-animation"
+        >
           <Images
             data={{
               wrapperClass: "carousel-item",
@@ -50,40 +58,44 @@ const ImageCarousel = () => {
           />
         </div>
 
-        <ButtonGroup
-          sx={{ display: "flex", justifyContent: "center", margin: "1em auto" }}
-          variant="outlined"
-          color="secondary"
-          aria-label="slider-controls"
-        >
-          <Button id="previous" onClick={handleControlClick}>
-            <ChevronLeft />
-          </Button>
-          <Button id="next" onClick={handleControlClick}>
-            <ChevronRight />
-          </Button>
-        </ButtonGroup>
+        <div className="controls-group">
+          <form>
+            <TextField
+              sx={{
+                width: "10rem",
+                maxWidth: "auto",
+                display: "block",
+              }}
+              labelplacement="start"
+              required
+              onChange={handleImagesCountChange}
+              error={imagesCount <= 2}
+              value={imagesCount}
+              label="Number of Images"
+              variant="outlined"
+              fullWidth
+              type="number"
+              color="secondary"
+            ></TextField>
+          </form>
 
-        <form>
-          <TextField
+          <ButtonGroup
             sx={{
-              width: "15rem",
-              margin: "1rem auto",
-              maxWidth: "auto",
-              display: "block",
+              display: "flex",
+              justifyContent: "center",
             }}
-            labelplacement="start"
-            required
-            onChange={(e) => setImagesCount(() => Number(e.target.value))}
-            error={imagesCount <= 2}
-            value={imagesCount}
-            label="Number of Images"
-            variant="filled"
-            fullWidth
-            type="number"
+            variant="outlined"
             color="secondary"
-          ></TextField>
-        </form>
+            aria-label="slider-controls"
+          >
+            <Button id="previous" onClick={handleControlClick}>
+              <ChevronLeft />
+            </Button>
+            <Button id="next" onClick={handleControlClick}>
+              <ChevronRight />
+            </Button>
+          </ButtonGroup>
+        </div>
       </Container>
     </div>
   );
