@@ -25,11 +25,11 @@ function App() {
   const [imagesCount, setImagesCount] = useState(3);
 
   return (
-    <AppContext.Provider value={{ imagesCount }}>
+    <AppContext.Provider value={{ imagesCount, setImagesCount }}>
       <ThemeProvider theme={myTheme}>
         <AppBar elevation={2} position="sticky" sx={{ background: "#14213d" }}>
           <Typography
-            variant="h2"
+            variant="h4"
             sx={{ color: "#e5e5e5", margin: ".25em auto" }}
             fontWeight="normal"
             align="center"
@@ -37,26 +37,6 @@ function App() {
             Image Carousel
           </Typography>
         </AppBar>
-
-        <form>
-          <TextField
-            sx={{
-              width: "15rem",
-              margin: "2rem auto",
-              maxWidth: "auto",
-              display: "block",
-            }}
-            labelPlacement="start"
-            required
-            onChange={(e) => setImagesCount(() => Number(e.target.value))}
-            error={imagesCount === 0}
-            value={imagesCount}
-            label="Number of Images"
-            variant="filled"
-            fullWidth
-            color="secondary"
-          ></TextField>
-        </form>
 
         <ImageCarousel />
         <ImageGrid />

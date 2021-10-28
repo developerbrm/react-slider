@@ -1,4 +1,5 @@
 img {
+  display: block;
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -6,7 +7,6 @@ img {
   -o-object-position: center;
      object-position: center;
   max-width: 100%;
-  background: #fca311;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
@@ -30,4 +30,59 @@ img {
 .image-grid-comp .image-grid-container .grid-item {
   height: 100%;
   max-width: 100%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.img-carousel-comp .img-carousel-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template: 1fr /1fr;
+  justify-items: center;
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.img-carousel-comp .img-carousel-container .carousel-item {
+  max-height: 70vh;
+  max-width: 800px;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+  height: 100%;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.display-in {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+.apply-image-load-animation {
+  background: linear-gradient(140deg, white 0%, #cccccc 50%, white 100%);
+  background-size: 300%;
+  -webkit-animation: image-load-animation 1s ease infinite running forwards;
+          animation: image-load-animation 1s ease infinite running forwards;
+}
+
+@-webkit-keyframes image-load-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes image-load-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }

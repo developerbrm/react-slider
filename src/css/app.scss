@@ -1,10 +1,10 @@
 img {
+  display: block;
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
   max-width: 100%;
-  background: #fca311;
   transition: 0.3s ease;
 }
 
@@ -24,6 +24,56 @@ img {
       height: 100%;
       // width: 15rem;
       max-width: 100%;
+      transition: 0.3s ease;
     }
+  }
+}
+
+.img-carousel-comp {
+  .img-carousel-container {
+    display: grid;
+    grid-template: 1fr /1fr;
+    justify-items: center;
+    min-height: 200px;
+    min-width: 200px;
+
+    .carousel-item {
+      max-height: 70vh;
+      max-width: 800px;
+      grid-row: 1/-1;
+      grid-column: 1/-1;
+      height: 100%;
+      transition: 0.3s ease-out;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+// utility classes
+.display-in {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+// animations
+.apply-image-load-animation {
+  background: linear-gradient(
+    140deg,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 0%, 80%) 50%,
+    hsl(0, 0%, 100%) 100%
+  );
+  background-size: 300%;
+  animation: image-load-animation 1s ease infinite running forwards;
+}
+
+@keyframes image-load-animation {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
   }
 }
