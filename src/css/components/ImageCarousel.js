@@ -44,7 +44,7 @@ const ImageCarousel = () => {
 
   return (
     <div className="img-carousel-comp">
-      <Container sx={{ padding: "1rem 0" }} maxWidth="lg">
+      <Container sx={{ margin: "1rem auto" }} maxWidth="lg">
         <div
           ref={carouselContainerRef}
           className="img-carousel-container apply-image-load-animation"

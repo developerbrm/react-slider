@@ -14,6 +14,8 @@ img {
 }
 
 .image-grid-comp .image-grid-container {
+  max-width: 90vw;
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -25,8 +27,8 @@ img {
   gap: 0.5rem;
   grid-auto-flow: dense;
   -ms-grid-rows: auto;
-  -ms-grid-columns: (minmax(clamp(10rem, 10vw, 15rem), 1fr))[auto-fit];
-      grid-template: auto/repeat(auto-fit, minmax(clamp(10rem, 10vw, 15rem), 1fr));
+  -ms-grid-columns: (minmax(clamp(7rem, 10vw, 15rem), 1fr))[auto-fit];
+      grid-template: auto/repeat(auto-fit, minmax(clamp(7rem, 10vw, 15rem), 1fr));
 }
 
 .image-grid-comp .image-grid-container .grid-item {
@@ -34,6 +36,8 @@ img {
   max-width: 100%;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .img-carousel-comp .img-carousel-container {
@@ -51,6 +55,7 @@ img {
   border-radius: 10px;
   overflow: hidden;
   margin: 0 auto;
+  max-width: 90vw;
 }
 
 .img-carousel-comp .img-carousel-container .carousel-item {
@@ -66,7 +71,7 @@ img {
 }
 
 .img-carousel-comp .controls-group {
-  margin: 1rem 0;
+  margin: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
