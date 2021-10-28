@@ -1,0 +1,29 @@
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  background: #fca311;
+  transition: 0.3s ease;
+}
+
+.image-grid-comp {
+  .image-grid-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    grid-auto-flow: dense;
+    grid-template: auto/ repeat(
+        auto-fit,
+        minmax(clamp(10rem, 10vw, 15rem), 1fr)
+      );
+
+    .grid-item {
+      height: 100%;
+      // width: 15rem;
+      max-width: 100%;
+    }
+  }
+}
