@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import React, { useContext } from "react";
 import Images from "./Images";
-import { AppContext } from "../../App";
+import { AppContext } from "../App";
 
 const ImageGrid = () => {
   const { imagesCount } = useContext(AppContext);

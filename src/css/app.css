@@ -36,8 +36,6 @@ img {
   max-width: 100%;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  -ms-grid-column-align: center;
-      justify-self: center;
 }
 
 .img-carousel-comp .img-carousel-container {

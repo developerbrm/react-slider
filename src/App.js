@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import { AppBar, TextField, Typography } from "@mui/material";
-import ImageGrid from "./css/components/ImageGrid";
-import ImageCarousel from "./css/components/ImageCarousel";
+import ImageGrid from "./components/ImageGrid";
+import ImageCarousel from "./components/ImageCarousel";
 export const AppContext = React.createContext();
 
 const useStyles = makeStyles({});

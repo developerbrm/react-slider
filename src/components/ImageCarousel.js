@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from "react";
 import { Button, ButtonGroup, Container, TextField } from "@mui/material";
 import Images from "./Images";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
-import { AppContext } from "../../App";
+import { AppContext } from "../App";
 
 const ImageCarousel = () => {
   const { imagesCount, setImagesCount } = useContext(AppContext);
